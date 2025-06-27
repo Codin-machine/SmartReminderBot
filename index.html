@@ -3,155 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartReminder Bot - Ваш интеллектуальный помощник</title>
+    <title>ИИ Бот-Напоминалка</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glass-bg-blob" id="blob1"></div>
-    <div class="glass-bg-blob" id="blob2"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-icon">🤖</span>
-                <span class="logo-text">SmartReminder</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span class="nav-link-text">Главная</span>
-                </a></li>
-                <li><a href="#features" class="nav-link">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                    <span class="nav-link-text">Возможности</span>
-                </a></li>
-                <li><a href="#about" class="nav-link">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    <span class="nav-link-text">О проекте</span>
-                </a></li>
-                <li><a href="https://t.me/AiRemind_bot" target="_blank" class="nav-link special">
-                    <span>Начать</span>
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
-                </a></li>
-            </ul>
+    <main class="card">
+        <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
         </div>
-    </nav>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title" data-animate>SmartReminder Bot</h1>
-                    <p class="hero-description" data-animate style="--delay: 0.1s;">Ваш личный AI-ассистент для управления временем и задачами. Позвольте искусственному интеллекту помочь вам организовать день и всегда быть в курсе планов.</p>
-                    <div class="hero-buttons" data-animate style="--delay: 0.2s;">
-                        <a href="https://t.me/AiRemind_bot" class="cta-button" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l7 7-7 7"></path></svg>
-                            <span>Запустить бота</span>
-                        </a>
-                        <a href="#features" class="cta-button secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                            <span>Подробнее</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-visual" data-animate style="--delay: 0.3s;">
-                    <div class="code-block">
-                        <!-- ВОТ ИЗМЕНЕНИЕ: Возвращаем структуру хедера -->
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="code-title">bot_assistant.py</span>
-                        </div>
-                        <pre class="code-content"><code><span class="c-comment"># SmartReminder Bot: AI-powered assistant</span>
-<span class="c-keyword">import</span> <span class="c-module">telegram</span>
-<span class="c-keyword">import</span> <span class="c-module">datetime</span>
-<span class="c-keyword">import</span> <span class="c-module">ai_core</span>
-
-<span class="c-keyword">class</span> <span class="c-class">ReminderBot</span>:
-    <span class="c-keyword">def</span> <span class="c-function">__init__</span>(<span class="c-param">self</span>):
-        <span class="c-param">self</span>.active = <span class="c-bool">True</span>
-        <span class="c-param">self</span>.ai = ai_core.Assistant()
-    
-    <span class="c-keyword">async def</span> <span class="c-function">create_reminder</span>(<span class="c-param">self</span>, text, time):
-        <span class="c-comment"># Создание умного напоминания</span>
-        reminder = {
-            <span class="c-string">'text'</span>: text,
-            <span class="c-string">'time'</span>: time
-        }
-        <span class="c-keyword">return</span> reminder</code></pre>
-                    </div>
-                </div>
-                <a href="#features" class="scroll-down-arrow" aria-label="Scroll down">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-                </a>
-            </div>
-        </section>
-
-        <!-- Остальные секции -->
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title" data-animate>Ключевые возможности</h2>
-                <div class="features-grid">
-                    <div class="feature-card" data-animate style="--delay: 0s;"><div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Гибкие напоминания</h3><p>Создавайте гибкие напоминания: от разовых до ежедневных, с точностью до минуты.</p></div>
-                    <div class="feature-card" data-animate style="--delay: 0.1s;"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Управление задачами</h3><p>Легко организуйте свои дела, устанавливайте приоритеты и отслеживайте прогресс.</p></div>
-                    <div class="feature-card" data-animate style="--delay: 0.2s;"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>AI-ассистент</h3><p>Ваш AI-помощник всегда на связи, чтобы ответить на вопросы или просто пообщаться.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-wrapper" data-animate>
-                    <div class="about-content">
-                        <h2 class="section-title left-aligned">Что такое SmartReminder?</h2>
-                        <p>Это не просто бот для напоминаний. Это ваш персональный ассистент, созданный, чтобы упростить организацию вашей жизни. Он не только помнит о ваших делах, но и готов поддержать беседу благодаря интеграции с AI.</p>
-                        <div class="tech-stack">
-                            <h4>Технологии проекта:</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Telegram Bot API</span>
-                                <span class="tech-tag">AI Integration</span>
-                                <span class="tech-tag">SQLite</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item" style="--delay: 0.1s;"><div class="stat-number">24/7</div><div class="stat-label">Доступность</div></div>
-                        <div class="stat-item" style="--delay: 0.2s;"><div class="stat-number">&lt;1с</div><div class="stat-label">Время отклика</div></div>
-                        <div class="stat-item" style="--delay: 0.3s;"><div class="stat-number">100%</div><div class="stat-label">Надежность</div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="start" class="start">
-            <div class="container">
-                <h2 class="section-title" data-animate>Готовы начать?</h2>
-                <p class="start-description" data-animate style="--delay: 0.1s;">Всего три простых шага, и ваш личный помощник будет готов к работе.</p>
-                <div class="steps">
-                    <div class="step" data-animate style="--delay: 0.2s;"><div class="step-number">1</div><p>Нажмите на кнопку</p></div>
-                    <div class="step-arrow" data-animate style="--delay: 0.3s;">→</div>
-                    <div class="step" data-animate style="--delay: 0.4s;"><div class="step-number">2</div><p>Откройте Telegram</p></div>
-                    <div class="step-arrow" data-animate style="--delay: 0.5s;">→</div>
-                    <div class="step" data-animate style="--delay: 0.6s;"><div class="step-number">3</div><p>Отправьте <code>/start</code></p></div>
-                </div>
-                <a href="https://t.me/AiRemind_bot" class="cta-button large" target="_blank" data-animate style="--delay: 0.7s;">
-                    <span>Открыть в Telegram</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2"/></svg>
-                </a>
-            </div>
-        </section>
+        <h1>ИИ Бот-Напоминалка</h1>
+        <p class="tagline">Ваш умный помощник для задач и напоминаний в Telegram.</p>
+        <a href="https://t.me/AiRemind_bot" target="_blank" class="cta-button">
+            Открыть бота
+        </a>
     </main>
-
-    <footer class="footer">
-        <div class="container"><p>&copy; 2025 SmartReminder Bot. Дипломный проект.</p></div>
+    <footer>
+        <p>By Codegg</p>
     </footer>
-
-    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
